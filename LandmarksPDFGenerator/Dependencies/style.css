@@ -1,0 +1,40 @@
+@page { margin: 1cm 1cm; }
+
+body {font-family: helvetica;}
+
+div.onePage {height: 1000px;}
+
+table {width: 100%; font-size: 14px; border-collapse: collapse;}
+
+table#documentationInfo {border: 1px solid black; margin-bottom: 20px;}
+table#documentationInfo tr td {padding: 5px;}
+table#documentationInfo tr td:nth-child(1) {font-weight: bold; text-align: left;}
+table#documentationInfo tr td:nth-child(2) {text-align: right;}
+
+table#viewsInfo{border: 1px dashed black; margin-bottom: 20px;}
+table#viewsInfo tr td {padding: 5px;}
+table#viewsInfo tr td:nth-child(1) {font-weight: bold; text-align: left;}
+table#viewsInfo tr td:nth-child(2) {text-align: right;}
+
+table#landmarksSummary {margin: 20px 0px 20px 0px;}
+table#landmarksSummary tr td{padding: 5px;}
+table#landmarksSummary tr:nth-child(1) {font-weight: bold;}
+table#landmarksSummary tr td:nth-child(1) {text-align: left;}
+table#landmarksSummary tr td:nth-child(2) {text-align: right;}
+table#landmarksSummary tr td:nth-child(3) {width: 20px; text-align: right;}
+
+table.landmarkInfo {margin: 20px 0px 140px 0px;}
+table.landmarkInfo tr td {padding: 5px;}
+table.landmarkInfo tr td:nth-child(1) {font-weight:bold; text-align: left;}
+table.landmarkInfo tr td:nth-child(2) {text-align: right;}
+
+img {width: 200px; height: 200px; margin: 3px 5px 3px 5px;}
+
+img.redView {border: 2px solid red;}
+img.yellowView {border: 2px solid yellow;}
+img.greenView {border: 2px solid green;}
+
+table.landmarkViews tr td:nth-child(1) {width: 60px; text-align: left;}
+table.landmarkViews tr td:nth-child(2) {text-align: left;}
+table.landmarkViews tr td:nth-child(3) {text-align: center;}
+table.landmarkViews tr td:nth-child(4) {text-align: right;}
