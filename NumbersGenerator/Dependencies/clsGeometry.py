@@ -43,6 +43,7 @@ class geometry:
 
         landmarksIds = landmarksIdFile.readlines()
         landmarksIds.pop(0) #Remove first line
+        print landmarksIds
 
         # Close the files
 

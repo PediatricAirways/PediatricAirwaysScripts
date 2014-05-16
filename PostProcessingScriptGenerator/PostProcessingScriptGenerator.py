@@ -3,6 +3,7 @@
 import sys
 import os
 import shutil
+import stat
 
 # Paths definition
 
@@ -26,11 +27,11 @@ if len(sys.argv) < 6:
 
     print("Error: Not enough arguments")
     print("--------------------------------------------------------------------------------")
-    print("Argument 1: Path to inputs directory")
-    print("Argument 2: Path (reduced) file inputs")
-    print("Argument 3: Path to desired main shell file")
-    print("Argument 4: Path to Matlab executable")
-    print("Argument 5: Path to code directory")
+    print("Argument 1: Path to inputs directory. This directory contains one directory per scan to process.")
+    print("Argument 2: Path (reduced) file inputs. Each line should have the name of a directory containing the input files.")
+    print("Argument 3: Path to desired main shell file that runs all the processing.")
+    print("Argument 4: Path to Matlab executable.")
+    print("Argument 5: Path to AirwayProcessing code directory.")
     print("--------------------------------------------------------------------------------")
     quit()
 
@@ -62,6 +63,10 @@ inputsList = fctOthers.createListFromListFile(inputsFilePath)
 centerLineExec = codeDirectoryPath + "centerline"
 crossSectionExec = codeDirectoryPath + "crossSections/bin/computeAreaAndContourWithMeanNorm"
 displayExec = codeDirectoryPath + "display"
+
+# Permissions for scripts
+
+scriptPermissions = stat.S_IRWXU | stat.S_IRGRP | stat.S_IXGRP | stat.S_IROTH | stat.S_IXOTH
 
 # Algorithm
 
@@ -159,9 +164,11 @@ for inputTemp in inputsList:
     scriptFile.write("quit;\"\n\n")
 
     scriptFile.close()
+    os.chmod(scriptFilePath, scriptPermissions)
 
 # Quit
 
 mainScriptFile.close()
+os.chmod(mainScriptFilePath, scriptPermissions)
 
 quit()

@@ -12,6 +12,8 @@ def createListFromListFile(inputsFilePath):
     inputsFile.close()
 
     inputsList = map(lambda s: s.strip(), inputsList) #clean the \n
+    inputsList = map(lambda s: s.split( ' ' )[0], inputsList) #take only first item
+    inputsList = filter(lambda s : s[0] != '#', inputsList)   #skip comments
 
     return inputsList
 
