@@ -78,8 +78,8 @@ for inputTemp in inputsList:
     postProcessingDirectoryPath = inputDirectoryPath + "PostProcessing/"
     scriptFilePath = postProcessingDirectoryPath + "postProcessing.sh"
 
-    if os.path.exists(postProcessingDirectoryPath):
-        shutil.rmtree(postProcessingDirectoryPath)
+    #if os.path.exists(postProcessingDirectoryPath):
+    #    shutil.rmtree(postProcessingDirectoryPath)
     os.mkdir(postProcessingDirectoryPath)
 
     mainScriptFile.write(scriptFilePath + "\n")
